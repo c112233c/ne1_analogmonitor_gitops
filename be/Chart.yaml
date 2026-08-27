@@ -1,0 +1,6 @@
+apiVersion: v2
+name: analogmonitor_be_30088
+description: NE1 SCADA Analog Monitoring backend
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

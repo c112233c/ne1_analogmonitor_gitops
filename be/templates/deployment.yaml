@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analogmonitor_be_30088
+  namespace: boat
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: analogmonitor_be_30088
+
+  template:
+    metadata:
+      labels:
+        app: analogmonitor_be_30088
+
+    spec:
+      containers:
+      - name: analogmonitor_be_30088
+
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 80
