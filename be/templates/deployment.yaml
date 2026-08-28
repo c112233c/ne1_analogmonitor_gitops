@@ -26,3 +26,7 @@ spec:
 
         ports:
         - containerPort: 80
+
+        envFrom: 
+        - secretRef: 
+            name: analogmonitor-be-30088-secret
