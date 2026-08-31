@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: analogmonitor_fe_30087
+  name: analogmonitor-fe-30087
   namespace: boat
 
 spec:
@@ -9,16 +9,16 @@ spec:
 
   selector:
     matchLabels:
-      app: analogmonitor_fe_30087
+      app: analogmonitor-fe-30087
 
   template:
     metadata:
       labels:
-        app: analogmonitor_fe_30087
+        app: analogmonitor-fe-30087
 
     spec:
       containers:
-      - name: analogmonitor_fe_30087
+      - name: analogmonitor-fe-30087
 
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
 
@@ -26,3 +26,7 @@ spec:
 
         ports:
         - containerPort: 80
+
+        envFrom: 
+        - secretRef: 
+            name: analogmonitor-fe-30087-secret
